@@ -6,28 +6,18 @@ import { NotebookPanel, INotebookModel } from '@jupyterlab/notebook';
 
 
 function JupyterLabLineWrapCellOuputOn() {
-  var divs = document.getElementsByClassName("jp-OutputArea-output");
+  var divs = document.querySelectorAll(".jp-OutputArea-output pre");
   for(let i=0; i<divs.length; i++) {
-    var div = divs[i];
-    if(div.childNodes.length > 0) {
-      var childnodes = div.querySelectorAll('pre');
-      for(let j=0; j<childnodes.length; j++) {
-        childnodes[j].style["whiteSpace"] = "pre";
-      }
-    }
+    var div = divs[i] as HTMLElement;
+    if (div.style['whiteSpace'] != "pre") div.style["whiteSpace"] = "pre";
   }
 }
 
 function JupyterLabLineWrapCellOuputOff() {
-  var divs = document.getElementsByClassName("jp-OutputArea-output");
+  var divs = document.querySelectorAll(".jp-OutputArea-output pre");
   for(let i=0; i<divs.length; i++) {
-    var div = divs[i];
-    if(div.childNodes.length > 0) {
-      var childnodes = div.querySelectorAll('pre');
-      for(let j=0; j<childnodes.length; j++) {
-        childnodes[j].style["whiteSpace"] = "pre-wrap";
-      }
-    }
+    var div = divs[i] as HTMLElement;
+    if (div.style['whiteSpace'] != "pre-wrap") div.style["whiteSpace"] = "pre-wrap";
   }
 }
 
