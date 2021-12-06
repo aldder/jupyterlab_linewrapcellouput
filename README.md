@@ -2,7 +2,9 @@
 
 [![Github Actions Status](https://github.com/aldder/jupyterlab_linewrapcellouput/workflows/Build/badge.svg)](https://github.com/aldder/jupyterlab_linewrapcellouput/actions/workflows/build.yml)
 
-A JupyterLab extension.
+A JupyterLab extension to remove line wrap from code cell output.
+
+![line wrap example](linewrap.gif)
 
 
 
