@@ -43,14 +43,16 @@ export class ButtonLineWrapCellOutput
       const triggerLineWrapCellOutput = () => {
         if (SET) {
           SET = false;
-          if (button.hasClass('selected')) button.removeClass('selected');
+          console.log('Extension jupyterlab_linewrapcelloutput disabled');
           clearInterval(t);
           JupyterLabLineWrapCellOuputOff();
+          if (button.hasClass('selected')) button.removeClass('selected');
         }
         else {
           SET = true;
-          button.addClass('selected');
+          console.log('Extension jupyterlab_linewrapcelloutput enabled');
           t = setInterval(JupyterLabLineWrapCellOuputOn,10);
+          button.addClass('selected');
         }
       };
 
